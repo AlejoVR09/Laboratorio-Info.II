@@ -278,9 +278,27 @@ int main()
                 int n=0;
                 cout <<"Ingrese un numero entero: ";
                 cin >>n;
-                for (int i=n;i>1 ;i-- ) {
-                     cout <<i<<endl;
+                int mcm=1;
+                int max=0;
+                for (int i=1;i<=n ;i++ ) {
+
+                    int exp=1;
+                    if(divisores(i)==2){
+                         mcm=mcm*i;
+                     }
+                     else{
+                        for (int j=2;j<=i;j=j+2) {
+
+                            if(j*2==i){
+                                max=j*2;
+                                exp=exp+1;
+                                cout <<exp<<endl;
+                            }
+                        }
+                     }
                 }
+                cout <<mcm;
+
 
             break;
             }
@@ -337,7 +355,7 @@ int main()
                 }
                 int comp=0;
                 for (int i=1;i<=25;i++) {
-                    for (int j=1;j<=5-comp;j++) {
+                    for (int j=n;j<=5-comp;j++) {
                         cout <<j<<endl;
                         }
                     comp++;
